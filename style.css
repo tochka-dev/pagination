@@ -6,7 +6,7 @@ body {
   background-color: #f5f6f7;
   display: flex;
   justify-content: center;
-  padding: 80px 0;
+  padding: 80px 0 80px;
 }
 
 #app {
@@ -15,6 +15,7 @@ body {
 
 .grid {
   width: 100%;
+  max-width: 1280px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -89,8 +90,9 @@ body {
   height: 44px;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto 60px;
+  margin: 30px auto 30px;
   padding: 0 15px;
+  max-width: 1280px;
 }
 
 .pagination__left, .pagination__right {
