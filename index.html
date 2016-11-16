@@ -10,35 +10,28 @@
   <template id="pagination-template">
     <div class="pagination">
       <div class="pagination__left">
-        <a href="#" v-if="hasPrev()" @click="changePage(prevPage)">Предыдущая</a>
+        <a href="#" v-if="hasPrev()" @click.prevent="changePage(prevPage)">Предыдущая</a>
       </div>
       <div class="pagination__mid">
         <ul>
-          <li v-if="hasFirst()"><a href="#" @click="changePage(1)">1</a></li>
+          <li v-if="hasFirst()"><a href="#" @click.prevent="changePage(1)">1</a></li>
           <li v-if="hasFirst()">...</li>
           <li v-for="page in pages">
-            <a href="#" @click="changePage(page)" :class="{ current: current == page }">
+            <a href="#" @click.prevent="changePage(page)" :class="{ current: current == page }">
               {{ page }}
             </a>
           </li>
           <li v-if="hasLast()">...</li>
-          <li v-if="hasLast()"><a href="#" @click="changePage(totalPages)">{{ totalPages }}</a></li>
+          <li v-if="hasLast()"><a href="#" @click.prevent="changePage(totalPages)">{{ totalPages }}</a></li>
         </ul>
       </div>
       <div class="pagination__right">
-        <a href="#" v-if="hasNext()" @click="changePage(nextPage)">Следующая</a>
+        <a href="#" v-if="hasNext()" @click.prevent="changePage(nextPage)">Следующая</a>
       </div>
     </div>
   </template>
 
   <div id="app">
-    
-    <pagination 
-      :current="currentPage" 
-      :total="totalPhotos" 
-      :perPage="perPage" 
-      @page-changed="fetchPhotos"
-    ></pagination>
 
     <section class="grid">
       <div class="grid__item card" v-for="photo in photos">
@@ -53,6 +46,13 @@
         </div>
       </div>
     </section>
+
+    <pagination 
+      :current="currentPage" 
+      :total="totalPhotos" 
+      :perPage="perPage" 
+      @page-changed="fetchPhotos"
+    ></pagination>
 
   </div>
   
