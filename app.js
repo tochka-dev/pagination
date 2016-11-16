@@ -1,4 +1,4 @@
-var appId = 'd8dda2b6aaf371648afc087a1714f10d4dd1d45c53f04eaa582fda1042dc8be3'
+var appId = UNSPLASH_APP_ID_HERE
 
 new Vue({
   el: '#app',
