@@ -139,9 +139,16 @@ body {
   transition: all .2s ease-in-out;
 }
 
-.pagination a:hover, .pagination a.current {
+.pagination a.current {
   border-color: #ea4c89;
   color: #ea4c89;
+}
+
+@media (hover) {
+   .pagination a:hover {
+      border-color: #ea4c89;
+      color: #ea4c89;
+   }
 }
 
 .pagination__mid {
